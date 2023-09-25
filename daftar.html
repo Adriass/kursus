@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Kursus Online</title>
+    <style>
+        body {
+            background-image: url('daftar.jpg');
+            background-color: black;
+            color: black;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        select, input, button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        button {
+            background-color: darkgreen;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Pendaftaran Kursus Online</h2>
+        <form id="registration-form">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama" required>
+            <br>
+
+            <label for="provinsi">Provinsi:</label>
+            <input type="text" id="provinsi" name="provinsi" required>
+            <br>
+
+            <label for="kursus">Pilihan Kursus:</label>
+            <select id="kursus" name="kursus" required>
+                <option value="html">HTML - 10k</option>
+                <option value="css">CSS - 20k</option>
+                <option value="htmlcss">HTML+CSS - 30k</option>
+            </select>
+            <br>
+
+            <button type="button" id="submit-button">Chat Via Whatsapp</button>
+        </form>
+    </div>
+    <footer>
+        <h5>!!NGODING BARENG Team!!</h5>
+    </footer>
+
+    <script>
+        document.getElementById('submit-button').addEventListener('click', function() {
+            const form = document.getElementById('registration-form');
+            const nama = form.elements['nama'].value;
+            const provinsi = form.elements['provinsi'].value;
+            const kursus = form.elements['kursus'].value;
+            
+            // Ganti nomor berikut dengan nomor Anda
+            const nomorTujuan = '085721831812';
+            const pesan = `join kursus ka: ${kursus}`;
+
+            // Membuka aplikasi pesan dengan nomor dan pesan yang sudah ditentukan
+            window.open(`https://wa.me/${nomorTujuan}?text=${encodeURIComponent(pesan)}`);
+        });
+    </script>
+</body>
+</html
