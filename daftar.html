@@ -1,73 +1,151 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pendaftaran Kursus Online</title>
+
     <style>
         body {
-            background-image: url('daftar.jpg');
-            background-color: black;
-            color: black;
-            text-align: center;
-            padding: 20px;
+            margin: 0;
         }
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
+
+        #container {
+            background: url('ya.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        select, input, button {
+
+        #formBox {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px; /* Diperkecil sedikit dari sebelumnya */
+            border-radius: 8px; /* Diperkecil sudutnya */
+            text-align: left;
+        }
+
+        h2 {
+            color: #3498db;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
             width: 100%;
-            margin-bottom: 10px;
-            padding: 5px;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border-radius: 32px;
         }
+        
+        input:focus {
+          background-color: lightgrey;
+        }
+
         button {
-            background-color: darkgreen;
-            color: black;
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px; /* Diperkecil sudutnya */
+            cursor: pointer;
+border-radius: 32px;
         }
+
+        button:hover {
+            background-color: skyblue;
+        }
+
+        
+        
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Pendaftaran Kursus Online</h2>
-        <form id="registration-form">
-            <label for="nama">Nama Lengkap:</label>
-            <input type="text" id="nama" name="nama" required>
-            <br>
 
-            <label for="provinsi">Provinsi:</label>
-            <input type="text" id="provinsi" name="provinsi" required>
-            <br>
+    <div id="container">
+        <div id="formBox">
+            <h2>Pendaftaran Kursus Online</h2>
+<div class="input-wrapper">
+            <form id="registrationForm">
+ <label form="nama">Nama :</label>
+                <input type="text" id="nama" name="nama" required>
+               
 
-            <label for="kursus">Pilihan Kursus:</label>
-            <select id="kursus" name="kursus" required>
-                <option value="html">HTML - 10k</option>
-                <option value="css">CSS - 20k</option>
-                <option value="htmlcss">HTML+CSS - 30k</option>
-            </select>
-            <br>
+<label for="provinsi">Pilih Provinsi:</label>
+<select id="provinsi" name="provinsi">
+  <option value="Aceh">Aceh</option>
+  <option value="Sumatera Utara">Sumatera Utara</option>
+  <option value="Sumatera Barat">Sumatera Barat</option>
+  <option value="Riau">Riau</option>
+  <option value="Kepulauan Riau">Kepulauan Riau</option>
+  <option value="Jambi">Jambi</option>
+  <option value="Bengkulu">Bengkulu</option>
+  <option value="Sumatera Selatan">Sumatera Selatan</option>
+  <option value="Kepulauan Bangka Belitung">Kepulauan Bangka Belitung</option>
+  <option value="Lampung">Lampung</option>
+  <option value="Banten">Banten</option>
+  <option value="DKI Jakarta">DKI Jakarta</option>
+  <option value="Jawa Barat">Jawa Barat</option>
+  <option value="Jawa Tengah">Jawa Tengah</option>
+  <option value="DI Yogyakarta">DI Yogyakarta</option>
+  <option value="Jawa Timur">Jawa Timur</option>
+  <option value="Bali">Bali</option>
+  <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+  <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
+  <option value="Kalimantan Barat">Kalimantan Barat</option>
+  <option value="Kalimantan Tengah">Kalimantan Tengah</option>
+  <option value="Kalimantan Selatan">Kalimantan Selatan</option>
+  <option value="Kalimantan Timur">Kalimantan Timur</option>
+  <option value="Kalimantan Utara">Kalimantan Utara</option>
+  <option value="Sulawesi Utara">Sulawesi Utara</option>
+  <option value="Gorontalo">Gorontalo</option>
+  <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+  <option value="Sulawesi Barat">Sulawesi Barat</option>
+  <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+  <option value="Maluku">Maluku</option>
+  <option value="Maluku Utara">Maluku Utara</option>
+  <option value="Papua Barat">Papua Barat</option>
+  <option value="Papua">Papua</option>
+  </label>
+</select>
 
-            <button type="button" id="submit-button">Chat Via Whatsapp</button>
-        </form>
+                <label for="kursus">Pilih Kursus:</label>
+                <select id="kursus" name="kursus" required>
+                    <option value="html">HTML - Rp 10,000</option>
+                    <option value="css">CSS - Rp 20,000</option>
+                    <option value="Html+Css">HTML + CSS - Rp 25,000</option>
+                    </div>
+                </select>
+
+                <button type="button" onclick="kirimPesanWhatsApp()">Daftar</button>
+            </form>
+        </div>
     </div>
-    <footer>
-        <h5>!!NGODING BARENG Team!!</h5>
-    </footer>
 
     <script>
-        document.getElementById('submit-button').addEventListener('click', function() {
-            const form = document.getElementById('registration-form');
-            const nama = form.elements['nama'].value;
-            const provinsi = form.elements['provinsi'].value;
-            const kursus = form.elements['kursus'].value;
-            
-            // Ganti nomor berikut dengan nomor Anda
-            const nomorTujuan = '6285721831812';
-            const pesan = `Ganteng mau join kursus ${kursus}`;
+        function kirimPesanWhatsApp() {
+            var nama = document.getElementById('nama').value;
+            var provinsi = document.getElementById('provinsi').value;
+            var kursus = document.getElementById('kursus').value;
 
-            // Membuka aplikasi pesan dengan nomor dan pesan yang sudah ditentukan
-            window.open(`https://wa.me/${nomorTujuan}?text=${encodeURIComponent(pesan)}`);
-        });
+            var pesanWhatsApp = "Halo, saya ingin mendaftar kursus.  Nama: " + nama + ", Asal : " + provinsi + ", Kursus: " + kursus;
+
+            var linkWhatsApp = "https://wa.me/6285721831812?text=" + encodeURIComponent(pesanWhatsApp);
+            window.location.href = linkWhatsApp;
+        }
     </script>
+
 </body>
-</html
+</html>
